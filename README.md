@@ -115,15 +115,15 @@ Ingress rules were validated to ensure correct service routing.
 
 ## Project Structure
 k8s/
-  ├── 01-namespace/
-  ├── 02-ingress/
-  ├── 03-metrics/
-  ├── 04-apps/
-        ├── backend-deployment.yaml
-        ├── backend-service.yaml
-        ├── api-deployment.yaml
-        ├── api-service.yaml
-        ├── api-hpa.yaml
+├── 01-namespace/
+├── 02-ingress/
+├── 03-metrics/
+├── 04-apps/
+│ ├── backend-deployment.yaml
+│ ├── backend-service.yaml
+│ ├── api-deployment.yaml
+│ ├── api-service.yaml
+│ └── api-hpa.yaml
 
 
 Docker images are built locally and pushed to Amazon ECR before deployment.
@@ -164,6 +164,7 @@ Observability stack (Prometheus + Grafana)
 CI/CD integration
 
 Infrastructure provisioning via Terraform
+
 
 
 Author

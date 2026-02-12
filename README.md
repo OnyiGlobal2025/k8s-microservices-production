@@ -113,17 +113,20 @@ Avoid dependency on AWS ALB
 Ingress rules were validated to ensure correct service routing.
 
 
-## Project Structure
+##  Project Structure
+
+```
 k8s/
 ├── 01-namespace/
 ├── 02-ingress/
 ├── 03-metrics/
 ├── 04-apps/
-│ ├── backend-deployment.yaml
-│ ├── backend-service.yaml
-│ ├── api-deployment.yaml
-│ ├── api-service.yaml
-│ └── api-hpa.yaml
+│   ├── backend-deployment.yaml
+│   ├── backend-service.yaml
+│   ├── api-deployment.yaml
+│   ├── api-service.yaml
+│   └── api-hpa.yaml
+```
 
 
 Docker images are built locally and pushed to Amazon ECR before deployment.

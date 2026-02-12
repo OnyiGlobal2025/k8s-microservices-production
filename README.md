@@ -14,7 +14,7 @@ together in practice.
 The diagram below illustrates the overall system design, including traffic flow, service communication, autoscaling, and container image sourcing.
 
 
-![EKS Architecture](doc/Architecture/eks-microservices-architecture.png)
+![EKS Architecture](docs/Architecture/eks-microservices-architecture.png)
 
 
 

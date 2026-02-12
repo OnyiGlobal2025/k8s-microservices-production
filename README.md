@@ -13,7 +13,9 @@ together in practice.
 
 The diagram below illustrates the overall system design, including traffic flow, service communication, autoscaling, and container image sourcing.
 
-[EKS Microservices Architecture](docs/architecture.png)
+
+![EKS Architecture](doc/Architecture/eks-microservices-architecture.png)
+
 
 
 ## Architecture
@@ -26,9 +28,9 @@ Docker images stored in Amazon ECR
 
 Two microservices:
 
-  Backend Service
+1 Backend Service
 
-  API Service
+2 API Service
 
 ClusterIP Services for internal communication
 

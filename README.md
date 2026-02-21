@@ -5,7 +5,6 @@
 This project demonstrates a production-style microservices deployment on Amazon EKS, focusing on Kubernetes networking, autoscaling, and service communication.
 
 The goal was to build a realistic Kubernetes environment — not just deploy containers — but understand how infrastructure, routing, and scaling work 
-
 together in practice.
 
 
@@ -36,7 +35,7 @@ ClusterIP Services for internal communication
 
 NGINX Ingress Controller for traffic routing
 
-metrics-server for resource metrics
+Metrics-server for resource metrics
 
 Horizontal Pod Autoscaler (HPA) for CPU-based scaling
 
@@ -53,7 +52,7 @@ NGINX Ingress Controller
 
 Horizontal Pod Autoscaler (HPA)
 
-metrics-server
+Metrics-server
 
 ## Application Design
 

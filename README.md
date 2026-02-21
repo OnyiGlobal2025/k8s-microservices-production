@@ -86,7 +86,7 @@ Defined CPU requests and limits
 
 Horizontal Pod Autoscaler (HPA)
 
-metrics-server integration
+Metrics-server integration
 
 Load testing was performed to validate that:
 

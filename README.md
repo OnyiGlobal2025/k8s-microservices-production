@@ -48,6 +48,8 @@ Docker
 
 Amazon ECR
 
+ExternalDNS (Automated DNS management)
+
 NGINX Ingress Controller
 
 Horizontal Pod Autoscaler (HPA)
@@ -110,6 +112,32 @@ Provide centralized entry into the cluster
 Avoid dependency on AWS ALB
 
 Ingress rules were validated to ensure correct service routing.
+
+
+## External DNS Integration
+
+This project also included ExternalDNS to automate DNS record management directly from Kubernetes.
+
+ExternalDNS was configured to:
+
+
+Monitor Kubernetes Ingress resources
+
+Automatically create and update DNS records
+
+Map the application domain to the Ingress LoadBalancer
+
+
+This eliminated manual DNS updates and ensured that domain routing remained synchronized with cluster state.
+
+Using ExternalDNS reinforces a production-ready approach by:
+
+
+Reducing manual DNS configuration
+
+Preventing routing drift
+
+Enabling infrastructure-driven DNS management
 
 
 ##  Project Structure

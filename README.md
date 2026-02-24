@@ -19,99 +19,101 @@ The diagram below illustrates the overall system design, including traffic flow,
 
 ## Architecture
 
-Amazon EKS cluster
+- Amazon EKS cluster
 
-Managed node group
+- Managed node group
 
-Docker images stored in Amazon ECR
+- Docker images stored in Amazon ECR
 
-Two microservices:
+- Two microservices:
 
-1 Backend Service
+   - Backend Service
 
-2 API Service
+   - API Service
 
-ClusterIP Services for internal communication
+- ClusterIP Services for internal communication
 
-NGINX Ingress Controller for traffic routing
+- NGINX Ingress Controller for traffic routing
 
-Metrics-server for resource metrics
+- Metrics-server for resource metrics
 
-Horizontal Pod Autoscaler (HPA) for CPU-based scaling
+- Horizontal Pod Autoscaler (HPA) for CPU-based scaling
 
 
 ## Technology Stack
 
-Kubernetes (Amazon EKS)
+- Kubernetes (Amazon EKS)
 
-Docker
+- Docker
 
-Amazon ECR
+- Amazon ECR
 
-ExternalDNS (Automated DNS management)
+- ExternalDNS (Automated DNS management)
 
-NGINX Ingress Controller
+- NGINX Ingress Controller
 
-Horizontal Pod Autoscaler (HPA)
+- Horizontal Pod Autoscaler (HPA)
 
-Metrics-server
+- Metrics-server
+
+
 
 ## Application Design
 
 ## Backend Service
 
-Deployed as a Kubernetes Deployment
+1. Deployed as a Kubernetes Deployment
 
-Exposed internally via ClusterIP
+2. Exposed internally via ClusterIP
 
-Designed for internal microservice communication
+3. Designed for internal microservice communication
 
 
 ## API Service
 
-Deployed as a Kubernetes Deployment
+1. Deployed as a Kubernetes Deployment
 
-Exposed internally via ClusterIP
+2. Exposed internally via ClusterIP
 
-Provides /health endpoint
+3. Provides /health endpoint
 
-Configured with CPU requests and limits
+4. Configured with CPU requests and limits
 
-Connected to HPA for autoscaling
+5. Connected to HPA for autoscaling
 
 
 ## Autoscaling Implementation
 
 The API service was configured with:
 
-Defined CPU requests and limits
+- Defined CPU requests and limits
 
-Horizontal Pod Autoscaler (HPA)
+- Horizontal Pod Autoscaler (HPA)
 
-Metrics-server integration
+- Metrics-server integration
 
-Load testing was performed to validate that:
+- Load testing was performed to validate that:
 
-CPU utilization exceeded the configured threshold
+- CPU utilization exceeded the configured threshold
 
-Replica count increased dynamically
+- Replica count increased dynamically
 
-Kubernetes control loop responded correctly
+- Kubernetes control loop responded correctly
 
-This confirmed autoscaling was functioning as expected.
+- This confirmed autoscaling was functioning as expected.
 
 
 ## Ingress Configuration
 
 The NGINX Ingress Controller was deployed to:
 
-Route external traffic to internal services
+1. Route external traffic to internal services
 
-Provide centralized entry into the cluster
+2. Provide centralized entry into the cluster
 
-Avoid dependency on AWS ALB
+3. Avoid dependency on AWS ALB
 
-Ingress rules were validated to ensure correct service routing.
+4. Ingress rules were validated to ensure correct service routing.
 
 
 ## External DNS Integration
@@ -121,23 +123,23 @@ This project also included ExternalDNS to automate DNS record management directl
 ExternalDNS was configured to:
 
 
-Monitor Kubernetes Ingress resources
+- Monitor Kubernetes Ingress resources
 
-Automatically create and update DNS records
+- Automatically create and update DNS records
 
-Map the application domain to the Ingress LoadBalancer
-
+- Map the application domain to the Ingress LoadBalancer
 
 This eliminated manual DNS updates and ensured that domain routing remained synchronized with cluster state.
+
 
 Using ExternalDNS reinforces a production-ready approach by:
 
 
-Reducing manual DNS configuration
+- Reducing manual DNS configuration
 
-Preventing routing drift
+- Preventing routing drift
 
-Enabling infrastructure-driven DNS management
+- Enabling infrastructure-driven DNS management
 
 
 ##  Project Structure
@@ -161,39 +163,39 @@ Docker images are built locally and pushed to Amazon ECR before deployment.
 
 ## Key Learning Outcomes
 
-Kubernetes autoscaling requires defined CPU requests
+- Kubernetes autoscaling requires defined CPU requests
 
-Labels and selectors must align exactly for services to function
+- Labels and selectors must align exactly for services to function
 
-Ingress routing depends on correct service port configuration
+- Ingress routing depends on correct service port configuration
 
-HPA depends on metrics-server availability
+- HPA depends on metrics-server availability
 
-Real-world troubleshooting builds production confidence
+- Real-world troubleshooting builds production confidence
 
-Cost awareness is part of responsible cloud engineering
+- Cost awareness is part of responsible cloud engineering
 
 
 ## Validation Checklist
 
-Cluster nodes in Ready state
+- Cluster nodes in Ready state
 
-All pods running
+- All pods running
 
-Services accessible internally
+- Services accessible internally
 
-Ingress routing verified
+- Ingress routing verified
 
-HPA scaling tested under load
+- HPA scaling tested under load
 
 
 ## Future Enhancements
 
-Observability stack (Prometheus + Grafana)
+- Observability stack (Prometheus + Grafana)
 
-CI/CD integration
+- CI/CD integration
 
-Infrastructure provisioning via Terraform
+- Infrastructure provisioning via Terraform
 
 
 

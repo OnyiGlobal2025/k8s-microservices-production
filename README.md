@@ -1,5 +1,15 @@
 ## Production-Grade Microservices Platform on Amazon EKS
 
+![Amazon EKS](https://img.shields.io/badge/Amazon_EKS-FF9900?style=for-the-badge&logo=amazon-eks&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Amazon ECR](https://img.shields.io/badge/Amazon_ECR-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
+![NGINX Ingress](https://img.shields.io/badge/NGINX_Ingress-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![ExternalDNS](https://img.shields.io/badge/ExternalDNS-Automated-blue?style=for-the-badge)
+![HPA](https://img.shields.io/badge/HPA-Autoscaling-success?style=for-the-badge)
+![Cloud Native](https://img.shields.io/badge/Cloud--Native-Production_Ready-326CE5?style=for-the-badge)
+
+
 ## Overview
 
 This project demonstrates a production-style microservices deployment on Amazon EKS, focusing on Kubernetes networking, autoscaling, and service communication.
